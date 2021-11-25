@@ -1,9 +1,21 @@
+import Home from "./Home";
+
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <h1>Just a page</h1>
-    </div>
+    <Router>
+      <div className="App">
+        {/* Navbar here */}
+        <div className="content">
+          <Switch>
+            <Route exact path= "/">
+              <Home />
+            </Route>
+          </Switch>
+        </div>
+      </div>
+    </Router>
   );
 }
 

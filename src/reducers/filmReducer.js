@@ -1,10 +1,10 @@
-import * as actions from "./actions.js"
+// import * as actions from path
 
 let lastID = 0;
 
 export default function filmReducer(state = [], action){
     switch(action.type){
-        case actions.FILM_ADDED:
+        case "filmAdded":
             return[
                 ...state,
                 {
@@ -14,11 +14,11 @@ export default function filmReducer(state = [], action){
                 }
             ];
             
-        case actions.FILM_REMOVED:
+        case "filmRemoved":
             return state.filter(film => film.id !== action.payload.id);
 
-        case actions.FILM_MODIFIED:
-        case actions.FILM_GET_ALL:
+        case "filmModified":
+        case "filmGetsAll":
         default:
             return state;
     }
