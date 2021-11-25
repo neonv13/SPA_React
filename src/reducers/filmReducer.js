@@ -22,5 +22,4 @@ export default function filmReducer(state = [], action){
         default:
             return state;
     }
-
 }
