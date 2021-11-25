@@ -9,4 +9,11 @@ function App() {
 
 export default App;
 
-//npx json-server --watch data/db.json --port 8000
+
+//  Notes
+//Turn on app
+//    npm start
+
+//Turn on json server
+//    npx json-server --watch data/db.json --port 8000
+//    -- still not having connection to app(just runn app)
