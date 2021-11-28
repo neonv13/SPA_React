@@ -1,6 +1,7 @@
 // import * as actions from path
 
-let lastID = 0;
+import { act } from "react-dom/test-utils";
+
 
 export default function filmReducer(state = [], action){
     switch(action.type){
@@ -8,9 +9,9 @@ export default function filmReducer(state = [], action){
             return[
                 ...state,
                 {
-                    id: ++lastID,
-                    nr: action.payload.nr,
-                    capacity: action.payload.capacity 
+                    id: action.payload.id,
+                    name: action.payload.name ,
+                    duration: action.payload.duration
                 }
             ];
             
@@ -18,9 +19,13 @@ export default function filmReducer(state = [], action){
             return state.filter(film => film.id !== action.payload.id);
 
         case "filmModified":
+            let tmp = state.findIndex(film => film.id === action.payload.id);
+            state[tmp].name = action.payload.name;
+            state[tmp].duration = action.payload.duration;
+            return state;
         case "filmGetsAll":
+            return state; // More like fetch data from server
         default:
             return state;
     }
-
 }
