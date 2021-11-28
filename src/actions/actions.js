@@ -19,9 +19,10 @@ export const filmRemove = (idTmp) =>({
     }
 });
 
-export const filmModified = (name, duration) =>({
+export const filmModified = (id, name, duration) =>({
     type: actions.FILM_MODIFIED,
     payload:{
+        id: id,
         name: name,
         duration: duration
     }

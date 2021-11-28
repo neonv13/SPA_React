@@ -27,6 +27,7 @@ export default App;
 
 
 //  Notes
+
 //Turn on app
 //    npm start
 
