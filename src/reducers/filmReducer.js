@@ -1,6 +1,5 @@
 // import * as actions from path
 
-let lastID = 0;
 
 export default function filmReducer(state = [], action){
     switch(action.type){
@@ -8,9 +7,9 @@ export default function filmReducer(state = [], action){
             return[
                 ...state,
                 {
-                    id: ++lastID,
-                    nr: action.payload.nr,
-                    capacity: action.payload.capacity 
+                    id: action.payload.id,
+                    name: action.payload.name ,
+                    duration: action.payload.duration
                 }
             ];
             
@@ -19,6 +18,7 @@ export default function filmReducer(state = [], action){
 
         case "filmModified":
         case "filmGetsAll":
+            return state;
         default:
             return state;
     }

@@ -1,11 +1,14 @@
-import * as actions from "./actions.js"
+import * as actions from "./actionsTypes"
+
+let lastID = 0;
 
 //Films
-export const filmAdd = (nrTmp, capacityTmp) =>({
+export const filmAdd = (name, duration) =>({
     type: actions.FILM_ADDED,
     payload:{
-        nr: nrTmp,
-        capacity: capacityTmp
+        id: ++lastID,
+        name: name,
+        duration: duration
     }
 });
 
@@ -16,8 +19,15 @@ export const filmRemove = (idTmp) =>({
     }
 });
 
-export const filmModified = (idTmp) =>({
-    
+export const filmModified = (name, duration) =>({
+    type: actions.FILM_MODIFIED,
+    payload:{
+        name: name,
+        duration: duration
+    }
+});
+export const filmGet = (idTmp) =>({
+    type: actions.FILM_GET_ALL, 
 });
 
 //Halls
