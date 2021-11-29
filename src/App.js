@@ -2,6 +2,12 @@ import Home from "./Home";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navbar from "./Navbar";
+import AddFilmForm2 from "./AddFilmForm2"
+import MovieList from "./MovieList"
+import HallList from "./HallList"
+import ShowList from "./ShowList"
+
+
 
 function App() {
   return (
@@ -9,14 +15,13 @@ function App() {
       <div className="App">
         <Navbar />
         <div className="content">
-          <Switch>
-            <Route exact path= "/">
-              <Home />
-            </Route>
-            <Route path= "/">
-              <Home />
-            </Route>
-          </Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path = '/films' component={MovieList}></Route>
+          <Route path = '/halls' component={HallList}></Route>
+          <Route path = '/shows' component={ShowList}></Route>
+
         </div>
       </div>
     </Router>
