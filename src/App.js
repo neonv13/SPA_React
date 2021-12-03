@@ -1,7 +1,7 @@
 import Home from "./Home";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Navbar from "./Navbar";
+import Navigation from "./Navbar";
 import AddFilmForm2 from "./AddFilmForm2"
 import MovieList from "./MovieList"
 import HallList from "./HallList"
@@ -13,7 +13,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Navbar />
+        <Navigation/>
         <div className="content">
           <Route exact path="/">
             <Home />

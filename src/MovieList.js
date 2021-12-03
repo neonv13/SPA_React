@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import * as action from "./actions/actions.js";
 import {useSelector, useDispatch} from "react-redux";
 import {Table, Button} from 'react-bootstrap'
@@ -9,13 +9,18 @@ const MovieList = () => {
 
     const dispath = useDispatch();
     const data = useSelector(state => state.filmReducer);
+     useEffect(() => {
+         dispath(action.showAllFilms());
+        
+     },[])
+     console.log(data) 
     const list = data.map((value) =>{
         return(
             <tr key={value.id}>
             <td>{value.id}</td>
             <td>{value.name}</td>
             <td>{value.duration}</td>
-            <td><Button variant="danger" size="sm" text ="Usun film"onClick={() => dispath(action.filmRemove(value.id))}>Usuń film</Button></td>
+            <td><Button variant="danger" size="sm" text ="Usun film"onClick={() => dispath(action.deleteFilm(value.id))}>Usuń film</Button></td>
             </tr>
             
         )

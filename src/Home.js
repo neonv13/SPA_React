@@ -13,7 +13,7 @@ function Home(){
     return(
         <div>
         <h1>Home Page Here</h1>
-            <button onClick={() => dispath(action.filmAdd("avg", 200))}>Add</button>
+            
             <button onClick={() => dispath(action.filmRemove(++y))}>Remove {x++}</button>
             <button onClick={() => dispath(action.filmModified(++x,"Star", 500))}>Mod</button>
         </div>
