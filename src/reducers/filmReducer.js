@@ -1,4 +1,4 @@
-// import * as actions from path
+import * as actions from "../actions/actionsTypes.js"
 
 import { act } from "react-dom/test-utils";
 import uuid from "react-uuid"
@@ -7,7 +7,7 @@ import uuid from "react-uuid"
 export default function filmReducer(state = [], action){
     let new_state;
     switch(action.type){
-        case "filmAdded":
+        case actions.FILM_ADDED:
             return[
                 ...state,
                 {

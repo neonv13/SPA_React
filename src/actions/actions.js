@@ -8,14 +8,15 @@ let lastID_show = 0;
 export const filmRemove = (idTmp) =>({
     type: actions.FILM_REMOVED,
     payload:{
-        id: idTmp
-        
+        id: idTmp       
     }
 });
 
 export const deleteFilm = (id) => {
     return async dispatch => {
         const deletedFilm = await axios.delete(`http://localhost:8000/films/${id}`);
+        console.log(deletedFilm);
+        
         dispatch({ type: actions.FILM_REMOVED, id });
       
       
