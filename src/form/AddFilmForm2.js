@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import * as action from "./actions/actions.js";
+import * as action from "../actions/actions.js";
 import {useSelector, useDispatch} from "react-redux";
-import axios from 'axios'
+// import axios from 'axios'
 const AddFilmForm2 = () => {
 
     const dispath = useDispatch();

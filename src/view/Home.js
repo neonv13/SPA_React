@@ -1,5 +1,5 @@
 import {useSelector, useDispatch} from "react-redux";
-import * as action from "./actions/actions.js";
+import * as action from "../actions/actions.js";
 
 
 

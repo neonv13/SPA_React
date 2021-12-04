@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import * as action from "./actions/actions.js";
+import * as action from "../actions/actions.js";
 import {useSelector, useDispatch} from "react-redux";
 import {Table, Button} from 'react-bootstrap'
-import AddShowForm from "./AddShowForm.js";
-import EditShow from "./EditShow"
+import AddShowForm from "../form/AddShowForm.js";
+import EditShow from "../EditShow"
 
 
 const ShowList = () => {

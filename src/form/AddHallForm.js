@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import * as action from "./actions/actions.js";
+import * as action from "../actions/actions.js";
 import {useSelector, useDispatch} from "react-redux";
 
 const AddHallForm = () => {

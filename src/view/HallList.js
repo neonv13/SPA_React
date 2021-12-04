@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import * as action from "./actions/actions.js";
+import * as action from "../actions/actions.js";
 import {useSelector, useDispatch} from "react-redux";
 import {Table, Button} from 'react-bootstrap'
-import AddHallForm from './AddHallForm'
+import AddHallForm from '../form/AddHallForm'
 
 
 const HallList = () => {

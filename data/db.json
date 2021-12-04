@@ -7,19 +7,34 @@
     },
     {
       "id": 2,
-      "name": "dasddas",
-      "duration": "dsadsasdasad"
+      "name": "asdf",
+      "duration": "200"
+    },
+    {
+      "id": 3,
+      "name": "qwer",
+      "duration": "200"
+    },
+    {
+      "id": 4,
+      "name": "zxcvb",
+      "duration": "200"
+    },
+    {
+      "id": 5,
+      "name": "zxcvb",
+      "duration": "200"
+    },
+    {
+      "id": 6,
+      "name": "zcxvb",
+      "duration": "200"
     }
   ],
   "halls": [
     {
       "number": 1,
       "id": 1,
-      "capacity": 200
-    },
-    {
-      "number": 2,
-      "id": 2,
       "capacity": 200
     }
   ],

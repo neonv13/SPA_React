@@ -1,11 +1,11 @@
-import Home from "./Home";
+import Home from "./view/Home";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navigation from "./Navbar";
-import AddFilmForm2 from "./AddFilmForm2"
-import MovieList from "./MovieList"
-import HallList from "./HallList"
-import ShowList from "./ShowList"
+import AddFilmForm2 from "./form/AddFilmForm2.js"
+import MovieList from "./view/MovieList"
+import HallList from "./view/HallList"
+import ShowList from "./view/ShowList"
 
 
 

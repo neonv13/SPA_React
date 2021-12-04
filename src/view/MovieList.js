@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import * as action from "./actions/actions.js";
+import * as action from "../actions/actions.js";
 import {useSelector, useDispatch} from "react-redux";
 import {Table, Button} from 'react-bootstrap'
-import AddFilmForm2 from "./AddFilmForm2.js";
+import AddFilmForm2 from "../form/AddFilmForm2.js";
 
 
 const MovieList = () => {
