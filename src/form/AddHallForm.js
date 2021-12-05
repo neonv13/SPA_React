@@ -12,9 +12,9 @@ const AddHallForm = () => {
     return(
         <div>
         <label>Numer sali</label>
-        <input type="text" value = {number} onChange={e => setNumber(e.target.value)} ></input>
+        <input type="number" value = {number} onChange={e => setNumber(e.target.value)} ></input>
         <label>Pojemność</label>
-        <input type="text" value = {capacity} onChange={e => setCapacity(e.target.value)}></input>
+        <input type="number" value = {capacity} onChange={e => setCapacity(e.target.value)}></input>
         <button onClick={() => dispath(action.addHall(data.length + 1,number, capacity))}>Add</button>
         {console.log(number)}
         </div>

@@ -1,38 +1,69 @@
 import React, { useState } from "react";
 import * as action from "../actions/actions.js";
-import {useSelector, useDispatch} from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import Select from "react-select"
-import {Button} from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 
 const AddShowForm = () => {
 
     const dispath = useDispatch();
     const movies = useSelector(state => state.filmReducer);
     const halls = useSelector(state => state.hallReducer);
-    const [film,setFilm] = useState()
-    const [hall,setHall] = useState()
+    const [film, setFilm] = useState()
+    const [hall, setHall] = useState()
     const data = useSelector(state => state.showReducer);
-    
+    function addFullData(id, filmName, hallName, date, time) {
+        const film = movies.filter(value => value.name === filmName)
+        console.log(film)
+        const hall = halls.filter(value => value.number === hallName)
+        const filmAsObject = { name: film[0].name, duration: film[0].duration, img_src: film[0].img_src }
+        const hallAsObject = { number: hall[0].number, capacity: hall[0].capacity }
+        let booked_seats = 0
 
-    return(
+        dispath(action.addShow(id, filmAsObject, hallAsObject, date, time, 0, booked_seats));
+    }
+    function getCurrentDate() {
+        var myDate = new Date();
+        var year = myDate.getFullYear();
+
+        var month = myDate.getMonth() + 1;
+        if (month <= 9)
+            month = '0' + month;
+
+        var day = myDate.getDate() + 1;
+        if (day <= 9)
+            day = '0' + day;
+
+        return year + '-' + month + '-' + day;
+    }
+            
+
+    return (
         <div>
-        <label>Nazwa filmu</label>
-        <select defaultValue = {film} onChange={e => setFilm(e.target.value)}>
-        <option disabled hidden selected> -- wybierz film-- </option>
-            {movies.map(value => {
-                return <option value={value.name} key={value.name}>{value.name}</option>
-            })}
-        </select>
-        <label>Sala</label>
-        <select defaultValue = {hall} onChange={e => setHall(e.target.value)}>
-        <option disabled hidden selected> -- wybierz sale -- </option>
-            {halls.map(value => {
-                return <option value={value.number} key={value.number}>{value.number}</option>
-            })}
-        </select>
-        <Button color="danger" onClick={() => dispath(action.addShow(data.length + 1,film, hall))}>Add</Button>
+            <form name="showForm">
+            <label>Nazwa filmu</label>
+            <select id="showFilm">
+                <option disabled hidden selected> -- wybierz film-- </option>
+                {movies.map(value => {
+                    return <option value={value.name} key={value.name}>{value.name}</option>
+                })}
+            </select>
+            <label>Sala</label>
+            <select id="showHall">
+                <option disabled hidden selected> -- wybierz sale -- </option>
+                {halls.map(value => {
+                    return <option value={value.number} key={value.number}>{value.number}</option>
+                })}
+            </select>
+            <label>Data</label>
+            <input type="date" min={getCurrentDate()} id="showDate"></input>
+            <label>Godzina</label>
+            <input type="time" id="showTime"></input>
+            <Button color="danger" onClick={() => addFullData(data.length + 1, document.getElementById("showFilm").value, document.getElementById("showHall").value
+                , document.getElementById("showDate").value, document.getElementById("showTime").value)}>Add</Button>
+                </form>
         </div>
     )
-    
+
 }
 export default AddShowForm;

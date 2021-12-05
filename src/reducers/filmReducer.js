@@ -13,7 +13,8 @@ export default function filmReducer(state = [], action){
                 {
                     id:action.new_film.id,
                     name:action.new_film.name,
-                    duration:action.new_film.duration
+                    duration:action.new_film.duration,
+                    img_src:action.new_film.img_src
 
                 }
             ];            
@@ -24,6 +25,7 @@ export default function filmReducer(state = [], action){
             let tmp = state.findIndex(film => film.id === action.payload.id);
             state[tmp].name = action.payload.name;
             state[tmp].duration = action.payload.duration;
+            state[tmp].img_src = action.payload.img_src
             return state;
         case "filmGetsAll":
             new_state=Object.assign({}, state);

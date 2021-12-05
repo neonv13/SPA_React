@@ -2,67 +2,115 @@
   "films": [
     {
       "id": 1,
-      "name": "dadsadssda",
-      "duration": "asdasdasd"
+      "name": "Dasdasd",
+      "duration": "3213123",
+      "img_src": "https://cdn.pixabay.com/photo/2021/11/11/20/49/sauerland-6787215_960_720.jpg"
     },
     {
       "id": 2,
-      "name": "asdf",
-      "duration": "200"
+      "name": "312312312",
+      "duration": "3123132",
+      "img_src": "https://cdn.pixabay.com/photo/2021/11/11/20/49/sauerland-6787215_960_720.jpg"
     },
     {
       "id": 3,
-      "name": "qwer",
-      "duration": "200"
+      "name": "Dasdsad",
+      "duration": "432432",
+      "img_src": "https://cdn.pixabay.com/photo/2021/11/11/20/49/sauerland-6787215_960_720.jpg"
     },
     {
       "id": 4,
-      "name": "zxcvb",
-      "duration": "200"
-    },
-    {
-      "id": 5,
-      "name": "zxcvb",
-      "duration": "200"
-    },
-    {
-      "id": 6,
-      "name": "zcxvb",
-      "duration": "200"
+      "name": "Hhghghghg",
+      "duration": "5435",
+      "img_src": "https://cdn.pixabay.com/photo/2021/11/11/20/49/sauerland-6787215_960_720.jpg"
     }
   ],
   "halls": [
     {
-      "number": 1,
       "id": 1,
-      "capacity": 200
+      "number": "32112",
+      "capacity": "12312312"
+    },
+    {
+      "id": 2,
+      "number": "2323",
+      "capacity": "3231"
+    },
+    {
+      "id": 3,
+      "number": "4324",
+      "capacity": "125"
+    },
+    {
+      "id": 4,
+      "number": "23",
+      "capacity": "4"
     }
   ],
   "shows": [
     {
       "id": 1,
-      "film": "dasddas",
-      "hall": "1"
+      "film": {
+        "name": "312312312",
+        "duration": "3123132",
+        "img_src": "https://cdn.pixabay.com/photo/2021/11/11/20/49/sauerland-6787215_960_720.jpg"
+      },
+      "hall": {
+        "number": "32112",
+        "capacity": "12312312"
+      },
+      "date": "2021-12-16",
+      "time": "06:41",
+      "tickets_sold": 0,
+      "booked_seats": 0
     },
     {
-      "film": "llldsdssdsddsl",
-      "hall": "kkkkdskk",
-      "id": 2
+      "id": 2,
+      "film": {
+        "name": "Dasdsad",
+        "duration": "432432",
+        "img_src": "https://cdn.pixabay.com/photo/2021/11/11/20/49/sauerland-6787215_960_720.jpg"
+      },
+      "hall": {
+        "number": "2323",
+        "capacity": "3231"
+      },
+      "date": "2021-12-24",
+      "time": "09:41",
+      "tickets_sold": 0,
+      "booked_seats": 0
     },
     {
       "id": 3,
-      "film": "dadsadssda",
-      "hall": "2"
+      "film": {
+        "name": "Hhghghghg",
+        "duration": "5435",
+        "img_src": "https://cdn.pixabay.com/photo/2021/11/11/20/49/sauerland-6787215_960_720.jpg"
+      },
+      "hall": {
+        "number": "2323",
+        "capacity": "3231"
+      },
+      "date": "2021-12-29",
+      "time": "13:41",
+      "tickets_sold": 0,
+      "booked_seats": 0
     },
     {
       "id": 4,
-      "film": "dasddas",
-      "hall": "1"
-    },
-    {
-      "id": 5,
-      "film": "dasddas",
-      "hall": "2"
+      "film": {
+        "name": "Hhghghghg",
+        "duration": "5435",
+        "img_src": "https://cdn.pixabay.com/photo/2021/11/11/20/49/sauerland-6787215_960_720.jpg"
+      },
+      "hall": {
+        "number": "2323",
+        "capacity": "3231"
+      },
+      "date": "2021-12-24",
+      "time": "07:41",
+      "tickets_sold": 0,
+      "booked_seats": 0
     }
   ]
 }

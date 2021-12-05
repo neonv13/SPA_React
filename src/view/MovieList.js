@@ -20,6 +20,7 @@ const MovieList = () => {
             <td>{value.id}</td>
             <td>{value.name}</td>
             <td>{value.duration}</td>
+            <td><a href = {value.img_src}>Okładka</a></td>
             <td><Button variant="danger" size="sm" text ="Usun film"onClick={() => dispath(action.deleteFilm(value.id))}>Usuń film</Button></td>
             </tr>
             
@@ -33,6 +34,7 @@ const MovieList = () => {
                 <th>Id filmu</th>
                 <th>Nazwa filmu</th>
                 <th>Czas trwania</th>
+                <th>Zdjęcie</th>
             </tr>
         </thead>
        <tbody>

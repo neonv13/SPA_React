@@ -22,12 +22,13 @@ export const deleteFilm = (id) => {
       
   }
 };
-export const filmModified = (id, name, duration) =>({
+export const filmModified = (id, name, duration, img_src) =>({
     type: actions.FILM_MODIFIED,
     payload:{
         id: id,
         name: name,
-        duration: duration
+        duration: duration,
+        img_src: img_src
     }
 });
 export const filmGet = (data) =>({
@@ -68,8 +69,8 @@ export const addFilmAction = (new_film) => (
         new_film 
     } 
 ); 
-export const addFilm = (id,name,duration) => (dispatch) => { 
-    const film_2send = { id:id, name:name, duration:duration }; 
+export const addFilm = (id,name,duration,img_src) => (dispatch) => { 
+    const film_2send = { id:id, name:name, duration:duration, img_src: img_src }; 
     addDataFilm(film_2send).then(data => { 
          dispatch(addFilmAction(film_2send)); 
     }).catch(error => { 
@@ -165,8 +166,8 @@ export const addShowAction = (new_show) => (
         new_show 
     } 
 ); 
-export const addShow = (id,film,hall) => (dispatch) => { 
-    const show_2send = { id:id, film:film, hall:hall }; 
+export const addShow = (id,film,hall,date,time,tickets_sold,booked_seats) => (dispatch) => { 
+    const show_2send = { id:id, film: film, hall:hall, date:date, time:time, tickets_sold:tickets_sold,booked_seats:booked_seats }; 
     addDataShow(show_2send).then(data => { 
          dispatch(addShowAction(show_2send)); 
     }).catch(error => { 
