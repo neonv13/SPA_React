@@ -1,16 +1,8 @@
 import * as actions from "./actionsTypes"
 import axios from 'axios'
 
-let lastID_film = 0;
-let lastID_hall = 0;
-let lastID_show = 0;
 
-export const filmRemove = (idTmp) =>({
-    type: actions.FILM_REMOVED,
-    payload:{
-        id: idTmp       
-    }
-});
+
 
 export const deleteFilm = (id) => {
     return async dispatch => {
@@ -22,10 +14,9 @@ export const deleteFilm = (id) => {
       
   }
 };
-export const filmModified = (id, name, duration, img_src) =>({
+export const filmModified = (name, duration, img_src) =>({
     type: actions.FILM_MODIFIED,
     payload:{
-        id: id,
         name: name,
         duration: duration,
         img_src: img_src
@@ -40,7 +31,6 @@ const getFilm=()=>{
     return axios("http://localhost:8000/films") 
     .then(res=>{
         const data = res.data;
-        lastID_film = data.length;
         return data
     }
         ).catch(error => console.error("Error:", error));
@@ -69,8 +59,8 @@ export const addFilmAction = (new_film) => (
         new_film 
     } 
 ); 
-export const addFilm = (id,name,duration,img_src) => (dispatch) => { 
-    const film_2send = { id:id, name:name, duration:duration, img_src: img_src }; 
+export const addFilm = (name,duration,img_src) => (dispatch) => { 
+    const film_2send = { name:name, duration:duration, img_src: img_src }; 
     addDataFilm(film_2send).then(data => { 
          dispatch(addFilmAction(film_2send)); 
     }).catch(error => { 
@@ -98,8 +88,8 @@ export const addHallAction = (new_hall) => (
         new_hall 
     } 
 ); 
-export const addHall = (id,number,capacity) => (dispatch) => { 
-    const hall_2send = { id:id, number:number, capacity:capacity }; 
+export const addHall = (number,capacity) => (dispatch) => { 
+    const hall_2send = { number:number, capacity:capacity }; 
     addDataHall(hall_2send).then(data => { 
          dispatch(addHallAction(hall_2send)); 
     }).catch(error => { 
@@ -122,10 +112,9 @@ export const hallRemove = (idTmp) =>({
         
     }
 });
-export const hallModified = (id,number,capacity) =>({
+export const hallModified = (number,capacity) =>({
     type: actions.HALL_MODIFIED,
     payload:{
-        id: id,
         number:number,
         capacity:capacity
     }
@@ -166,8 +155,8 @@ export const addShowAction = (new_show) => (
         new_show 
     } 
 ); 
-export const addShow = (id,film,hall,date,time,tickets_sold,booked_seats) => (dispatch) => { 
-    const show_2send = { id:id, film: film, hall:hall, date:date, time:time, tickets_sold:tickets_sold,booked_seats:booked_seats }; 
+export const addShow = (film,hall,date,time,tickets_sold,booked_seats) => (dispatch) => { 
+    const show_2send = { film: film, hall:hall, date:date, time:time, tickets_sold:tickets_sold,booked_seats:booked_seats }; 
     addDataShow(show_2send).then(data => { 
          dispatch(addShowAction(show_2send)); 
     }).catch(error => { 
@@ -196,6 +185,11 @@ export const deleteShow = (id) => {
       
   }
 };
+export const displayByDate = (date) => ({
+    type: actions.SHOW_DISPLAY,
+    date
+});
+
 export const showRemove = (idTmp) =>({
     type: actions.SHOW_REMOVED,
     payload:{
@@ -203,13 +197,17 @@ export const showRemove = (idTmp) =>({
         
     }
 });
-export const showModified = (id, film, hall) =>{
+export const showModified = (id,film,hall,date,time,tickets_sold,booked_seats) =>{
     return async dispatch => {
         const editShow = await axios.put(`http://localhost:8000/shows/${id}`,{
             film:film,
-            hall:hall
+            hall:hall,
+            date:date,
+            time:time,
+            tickets_sold:tickets_sold,
+            booked_seats:booked_seats
         })
-        dispatch({type: actions.SHOW_MODIFIED, film, hall})
+        dispatch({type: actions.SHOW_MODIFIED, id, film, hall,date,time,tickets_sold,booked_seats})
     }
     
 };

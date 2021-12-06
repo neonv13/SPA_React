@@ -18,10 +18,12 @@ export default function showReducer(state = [], action){
             
         case "showRemoved":
             return state.filter(show => show.id !== action.id);
-
+        case "showDisplay":
+            new_state = state.filter(show => show.date === action.date)
+            return new_state;
         case "showModified":
             let tmp = state.findIndex(show => show.id === action.id);
-            let element = {id:action.id,film:action.film,hall:action.hall, date:action.date, time:action.time, booked_seats:action.booked_seats}
+            let element = {id:action.id,film:action.film,hall:action.hall, date:action.date, time:action.time,tickets_sold:action.tickets_sold, booked_seats:action.booked_seats}
             state[tmp] = element;
             return state;
         case "showGetsAll":

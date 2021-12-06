@@ -12,15 +12,18 @@ const AddShowForm = () => {
     const [film, setFilm] = useState()
     const [hall, setHall] = useState()
     const data = useSelector(state => state.showReducer);
-    function addFullData(id, filmName, hallName, date, time) {
+    function addFullData(filmName, hallName, date, time) {
         const film = movies.filter(value => value.name === filmName)
         console.log(film)
         const hall = halls.filter(value => value.number === hallName)
         const filmAsObject = { name: film[0].name, duration: film[0].duration, img_src: film[0].img_src }
         const hallAsObject = { number: hall[0].number, capacity: hall[0].capacity }
-        let booked_seats = 0
+        let booked_seats = []
+        for(let i = 0; i< hallAsObject.capacity;i++){
+            booked_seats[i] = false;
+        }
 
-        dispath(action.addShow(id, filmAsObject, hallAsObject, date, time, 0, booked_seats));
+        dispath(action.addShow(filmAsObject, hallAsObject, date, time, 0, booked_seats));
     }
     function getCurrentDate() {
         var myDate = new Date();
@@ -39,8 +42,9 @@ const AddShowForm = () => {
             
 
     return (
-        <div>
-            <form name="showForm">
+        
+            <form name="showForm" onSubmit={() => addFullData(document.getElementById("showFilm").value, document.getElementById("showHall").value
+                , document.getElementById("showDate").value, document.getElementById("showTime").value)}>
             <label>Nazwa filmu</label>
             <select id="showFilm">
                 <option disabled hidden selected> -- wybierz film-- </option>
@@ -59,10 +63,9 @@ const AddShowForm = () => {
             <input type="date" min={getCurrentDate()} id="showDate"></input>
             <label>Godzina</label>
             <input type="time" id="showTime"></input>
-            <Button color="danger" onClick={() => addFullData(data.length + 1, document.getElementById("showFilm").value, document.getElementById("showHall").value
-                , document.getElementById("showDate").value, document.getElementById("showTime").value)}>Add</Button>
+            <Button color="danger" type="submit">Add</Button>
                 </form>
-        </div>
+        
     )
 
 }

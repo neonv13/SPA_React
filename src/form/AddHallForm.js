@@ -11,12 +11,13 @@ const AddHallForm = () => {
 
     return(
         <div>
+        <form onSubmit={() => dispath(action.addHall(number, capacity))}>
         <label>Numer sali</label>
         <input type="number" value = {number} onChange={e => setNumber(e.target.value)} ></input>
         <label>Pojemność</label>
         <input type="number" value = {capacity} onChange={e => setCapacity(e.target.value)}></input>
-        <button onClick={() => dispath(action.addHall(data.length + 1,number, capacity))}>Add</button>
-        {console.log(number)}
+        <button>Add</button>
+        </form>
         </div>
     )
     

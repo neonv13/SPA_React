@@ -6,6 +6,8 @@ import AddFilmForm2 from "./form/AddFilmForm2.js"
 import MovieList from "./view/MovieList"
 import HallList from "./view/HallList"
 import ShowList from "./view/ShowList"
+import EditShow from "./EditShow";
+import BuyTicket from "./form/BuyTicket";
 
 
 
@@ -21,6 +23,7 @@ function App() {
           <Route path = '/films' component={MovieList}></Route>
           <Route path = '/halls' component={HallList}></Route>
           <Route path = '/shows' component={ShowList}></Route>
+          <Route exact path='/buy_ticket/:id' name="buy_ticket" component={BuyTicket}></Route>
 
         </div>
       </div>

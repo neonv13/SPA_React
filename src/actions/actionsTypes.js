@@ -12,3 +12,4 @@ export const SHOW_ADDED = "showAdded";
 export const SHOW_REMOVED = "showRemoved";
 export const SHOW_MODIFIED = "showModified";
 export const SHOW_GET_ALL = "showGetsAll";
+export const SHOW_DISPLAY = "showDisplay"

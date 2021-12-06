@@ -7,9 +7,9 @@ const AddFilmForm2 = () => {
     const dispath = useDispatch();
     const [nameLength,setName] = useState(0)
     const [duration,setDuration] = useState()
-    function addFilm(id,name,duration,img_src){
+    function addFilm(name,duration,img_src){
         const nameToUpperCase = name.toString().charAt(0).toUpperCase() + name.slice(1);
-        dispath(action.addFilm(id,nameToUpperCase,duration,img_src))
+        dispath(action.addFilm(nameToUpperCase,duration,img_src))
         document.getElementById("filmDuration").value = ''
         document.getElementById("filmName").value = ''
     }
@@ -23,13 +23,15 @@ const AddFilmForm2 = () => {
     const data = useSelector(state => state.filmReducer);
     return(
         <div>
+        <form onSubmit={() => addFilm(document.getElementById("filmName").value,document.getElementById("filmDuration").value,document.getElementById("filmImage").value)}>
         <label>Nazwa filmu</label>
         <input type="text" id="filmName" onChange ={validateName}></input>
         <label>Czas trwania</label>
         <input type="number" id="filmDuration"></input>
         <label>Okładka filmu</label>
         <input type="text" id="filmImage"></input>
-        <button onClick={() => addFilm(data.length + 1,document.getElementById("filmName").value,document.getElementById("filmDuration").value,document.getElementById("filmImage").value)}>Add</button>
+        <button type="submit">Add</button>
+        </form>
         </div>
     )
     

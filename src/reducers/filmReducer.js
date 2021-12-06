@@ -22,10 +22,12 @@ export default function filmReducer(state = [], action){
             return state.filter(film => film.id !== action.id);
 
         case "filmModified":
-            let tmp = state.findIndex(film => film.id === action.payload.id);
+            console.log(state)
+            let tmp = state.findIndex(film => film.name === action.payload.name);
             state[tmp].name = action.payload.name;
             state[tmp].duration = action.payload.duration;
             state[tmp].img_src = action.payload.img_src
+            console.log(state)
             return state;
         case "filmGetsAll":
             new_state=Object.assign({}, state);
