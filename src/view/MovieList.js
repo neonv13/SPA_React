@@ -22,7 +22,7 @@ const MovieList = (prop) => {
             <td>{value.duration}</td>
             <td><a href = {value.img_src}>Okładka</a></td>
             {console.log(value.id)}
-            <td><Button variant="danger" size="sm" text ="Usun film"onClick={() => prop.deleteMovieHandler(value.id)}>Usuń film</Button></td>
+            <td><Button variant="danger" size="sm" text ="Usun film"onClick={() => prop.deleteMovieHandler(value.id,value.name)}>Usuń film</Button></td>
             </tr>
             
         )

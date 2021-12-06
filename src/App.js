@@ -18,7 +18,7 @@ function App() {
   function addMovieHandler(nameToUpperCase,duration,img_src){
     dispath(action.addFilm(nameToUpperCase,duration,img_src));
   }
-  function deleteMovieHandler(id){
+  function deleteMovieHandler(id,name){
     dispath(action.deleteFilm(id));
   }
   function getAllMovieHandler(){

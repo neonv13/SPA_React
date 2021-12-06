@@ -35,7 +35,7 @@ const AddFilmForm2 = (prop) => {
         <label>Nazwa filmu</label>
         <input type="text" id="filmName" onChange ={validateName}></input>
         <label>Czas trwania</label>
-        <input type="number" id="filmDuration"></input>
+        <input type="number" id="filmDuration" min="15" max="200"></input>
         <label>Okładka filmu</label>
         <input type="text" id="filmImage"></input>
         <button type="submit">Add</button>

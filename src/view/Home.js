@@ -17,7 +17,7 @@ function Home() {
     return (
         <div className="home-page">
             <div className="cards">
-                <MovieListByDate />
+                <MovieListByDate date="2021-12-09" />
             </div>
         </div>
     );

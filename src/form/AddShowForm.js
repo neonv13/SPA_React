@@ -60,7 +60,7 @@ const AddShowForm = (prop) => {
                 })}
             </select>
             <label>Data</label>
-            <input type="date" min={getCurrentDate()} id="showDate"></input>
+            <input type="date" min={getCurrentDate() - 1} id="showDate"></input>
             <label>Godzina</label>
             <input type="time" id="showTime"></input>
             <Button color="danger" type="submit">Add</Button>

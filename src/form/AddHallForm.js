@@ -20,11 +20,11 @@ const AddHallForm = (prop) => {
 
     return(
         <div>
-            <form onSubmit={() => addHall(number, capacity)}>
+            <form onSubmit={() => addHall(document.getElementById("hallNumber").value,document.getElementById("hallCapacity").value)}>
         <label>Numer sali</label>
-        <input type="number" value = {number} onChange={e => setNumber(e.target.value)} ></input>
+        <input type="number" id="hallNumber" ></input>
         <label>Pojemność</label>
-        <input type="number" value = {capacity} onChange={e => setCapacity(e.target.value)}></input>
+        <input type="number" id="hallCapacity"min="10" max="200" ></input>
         <button>Add</button>
         </form>
         </div>
