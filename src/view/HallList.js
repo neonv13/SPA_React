@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from "react";
-import * as action from "./actions/actions.js";
+import * as action from "../actions/actions.js";
 import {useSelector, useDispatch} from "react-redux";
 import {Table, Button} from 'react-bootstrap'
-import AddHallForm from './AddHallForm'
+import AddHallForm from '../form/AddHallForm'
 
 
-const HallList = () => {
+const HallList = (prop) => {
 
     const dispath = useDispatch();
     const data = useSelector(state => state.hallReducer);
     useEffect(() => {
-        dispath(action.showAllHalls());
+        prop.getAllHallHandler();
     },[])
     const list = data.map((value) =>{
         return(
@@ -18,7 +18,7 @@ const HallList = () => {
             <td>{value.id}</td>
             <td>{value.number}</td>
             <td>{value.capacity}</td>
-            <td><Button variant="danger" size="sm" text ="Usun film"onClick={() => dispath(action.deleteHall(value.id))}>Usuń sale</Button></td>
+            <td><Button variant="danger" size="sm" text ="Usun film"onClick={() => prop.deleteHallHandler(value.id)}>Usuń sale</Button></td>
             </tr>
             
         )
@@ -37,7 +37,7 @@ const HallList = () => {
            {list}
        </tbody>
        </Table>
-       <AddHallForm/>
+       <AddHallForm addHallHandler = {prop.addHallHandler}/>
        </div>
     )
 }

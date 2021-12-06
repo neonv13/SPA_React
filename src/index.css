@@ -11,3 +11,55 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.cards{
+  width: 50%;
+  margin-top: 50px;
+  
+}
+.cards-title{
+  text-align: center;
+  margin-bottom: 50px;
+  
+}
+
+.home-page{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.show-list{
+  display: flex;
+}
+.card-footer{
+  display: flex;
+  
+}
+.card-footer-element{
+  display: flex
+}
+
+.buy-ticket-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.buy-ticket-show-info{
+  display: flex;
+}
+.buy-ticket-show-info p{
+  margin: 20px;
+  font-size: 34px;
+}
+.buy-ticket{
+  text-align: center;
+}
+.buy-ticket-name{
+  text-align: center;
+  font-size: 34px;
+}
+.booked-seats{
+  margin-top: 300px;
+}

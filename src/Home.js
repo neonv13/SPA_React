@@ -1,5 +1,6 @@
 import {useSelector, useDispatch} from "react-redux";
 import * as action from "./actions/actions.js";
+import {Card} from 'react-bootstrap'
 
 
 
@@ -11,12 +12,7 @@ function Home(){
     const data = useSelector(state => state.filmReducer)
     
     return(
-        <div>
-        <h1>Home Page Here</h1>
-            <button onClick={() => dispath(action.filmAdd("avg", 200))}>Add</button>
-            <button onClick={() => dispath(action.filmRemove(++y))}>Remove {x++}</button>
-            <button onClick={() => dispath(action.filmModified(++x,"Star", 500))}>Mod</button>
-        </div>
+       
     );
 }
 
