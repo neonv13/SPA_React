@@ -1,18 +1,26 @@
 import React, { useState } from "react";
-import * as action from "../actions/actions.js";
-import {useSelector, useDispatch} from "react-redux";
-import axios from 'axios'
-const AddFilmForm2 = () => {
+import {useSelector} from "react-redux";
+// import axios from 'axios'
+// import { propTypes } from "react-bootstrap/esm/Image";
+import PropTypes from "prop-types";
 
-    const dispath = useDispatch();
-    const [nameLength,setName] = useState(0)
-    const [duration,setDuration] = useState()
+const AddFilmForm2 = (prop) => {
+
+    // const [nameLength,setName] = useState(0)
+    // const [duration,setDuration] = useState()
+    
     function addFilm(name,duration,img_src){
         const nameToUpperCase = name.toString().charAt(0).toUpperCase() + name.slice(1);
-        dispath(action.addFilm(nameToUpperCase,duration,img_src))
+        prop.addMovieHandler(nameToUpperCase,duration,img_src);
         document.getElementById("filmDuration").value = ''
         document.getElementById("filmName").value = ''
     }
+    addFilm.propTypes = {
+        name: PropTypes.string.isRequired,
+        duration: PropTypes.number.isRequired,
+    }
+
+
     function validateName(e){
         const input = document.getElementById("filmName");
         input.style.borderColor = "red"

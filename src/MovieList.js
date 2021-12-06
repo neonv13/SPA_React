@@ -5,13 +5,12 @@ import {Table, Button} from 'react-bootstrap'
 import AddFilmForm2 from "./AddFilmForm2.js";
 
 
-const MovieList = () => {
+const MovieList = (prop) => {
 
-    const dispath = useDispatch();
+    // const dispath = useDispatch();
     const data = useSelector(state => state.filmReducer);
      useEffect(() => {
-         dispath(action.showAllFilms());
-        
+         prop.getAllMovieHandler()        
      },[])
      console.log(data) 
     const list = data.map((value) =>{
@@ -20,7 +19,7 @@ const MovieList = () => {
             <td>{value.id}</td>
             <td>{value.name}</td>
             <td>{value.duration}</td>
-            <td><Button variant="danger" size="sm" text ="Usun film"onClick={() => dispath(action.deleteFilm(value.id))}>Usuń film</Button></td>
+            <td><Button variant="danger" size="sm" text ="Usun film"onClick={() => prop.deleteMovieHandler(value.id)}>Usuń film</Button></td>
             </tr>
             
         )
@@ -39,7 +38,7 @@ const MovieList = () => {
            {list}
        </tbody>
        </Table>
-       <AddFilmForm2/>
+       <AddFilmForm2 addMovieHandler = {prop.addMovieHandler}/>
        </div>
     )
 }

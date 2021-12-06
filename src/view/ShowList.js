@@ -7,16 +7,16 @@ import EditShow from "../EditShow"
 import { Link } from "react-router-dom";
 
 
-const ShowList = () => {
+const ShowList = (prop) => {
 
     const dispath = useDispatch();
     const data = useSelector(state => state.showReducer);
     const filmAsObject = { name: "dsadsa", duration: 13, img_src: "blalalal" }
     const hallAsObject = { number: 32132, capacity: 130 }
     useEffect(() => {
-        dispath(action.showAllHalls());
-        dispath(action.showAllFilms());
-        dispath(action.showAllshows());
+        prop.getAllShowHandler();
+        prop.getAllMovieHandler();
+        prop.getAllHallHandler();
     },[])
 
     const [show, setShow] = useState(false);
@@ -39,7 +39,7 @@ const ShowList = () => {
             <td>{value.time}</td>
             <td>{value.tickets_sold}</td>
             <td>{value.booked_seats}</td>
-            <td><Button variant="danger" size="sm" onClick={() => dispath(action.deleteShow(value.id))}>Usuń seans</Button></td>
+            <td><Button variant="danger" size="sm" onClick={() =>prop.deleteShowHandler(value.id) }>Usuń seans</Button></td>
             <td><Button size = "sm" onClick={() => handleShow(value.id,value.film,value.hall,value.date,value.time,value.tickets_sold,value.booked_seats)} >Edytuj seans</Button></td>
             </tr>
             
@@ -67,7 +67,7 @@ const ShowList = () => {
        </div>
        <div className="show-list-element">
         <h1>Dodawanie seansu</h1>
-       <AddShowForm/>
+       <AddShowForm addShowHandler = {prop.addShowHandler}/>
        {show === true && 
        <div>
            <h1>Edycja seansu</h1>

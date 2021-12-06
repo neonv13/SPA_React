@@ -1,17 +1,51 @@
 import Home from "./view/Home";
 
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import Navigation from "./Navbar";
-import AddFilmForm2 from "./form/AddFilmForm2.js"
+// import AddFilmForm2 from "./form/AddFilmForm2.js"
 import MovieList from "./view/MovieList"
 import HallList from "./view/HallList"
 import ShowList from "./view/ShowList"
-import EditShow from "./EditShow";
+// import EditShow from "./EditShow";
 import BuyTicket from "./form/BuyTicket";
-
+import {useSelector, useDispatch} from "react-redux";
+import * as action from "./actions/actions.js";
 
 
 function App() {
+  const dispath = useDispatch();
+
+  function addMovieHandler(nameToUpperCase,duration,img_src){
+    dispath(action.addFilm(nameToUpperCase,duration,img_src));
+  }
+  function deleteMovieHandler(id){
+    dispath(action.deleteFilm(id));
+  }
+  function getAllMovieHandler(){
+    dispath(action.showAllFilms());
+  }
+
+  function addHallHandler(number, capacity){
+    dispath(action.addHall(number, capacity));
+  }
+  function deleteHallHandler(id){
+    dispath(action.deleteHall(id));
+  }
+  function getAllHallHandler(){
+    dispath(action.showAllHalls());
+  }
+
+  function addShowHandler(filmAsObject, hallAsObject, date, time, booked_seats){
+    dispath(action.addShow(filmAsObject, hallAsObject, date, time, 0, booked_seats));
+  }
+  function deleteShowHandler(id){
+    dispath(action.deleteShow(id));
+  }
+  function getAllShowHandler(){
+    dispath(action.showAllshows());
+  }
+
+
   return (
     <Router>
       <div className="App">
@@ -20,10 +54,16 @@ function App() {
           <Route exact path="/">
             <Home />
           </Route>
-          <Route path = '/films' component={MovieList}></Route>
-          <Route path = '/halls' component={HallList}></Route>
-          <Route path = '/shows' component={ShowList}></Route>
-          <Route exact path='/buy_ticket/:id' name="buy_ticket" component={BuyTicket}></Route>
+          <Route path = '/films' component={() => 
+          <MovieList addMovieHandler= {addMovieHandler} deleteMovieHandler = {deleteMovieHandler} getAllMovieHandler = {getAllMovieHandler}/>}></Route>
+          <Route path = '/halls' component={() => 
+          <HallList addHallHandler = {addHallHandler} deleteHallHandler = {deleteHallHandler} getAllHallHandler = {getAllHallHandler}/>}></Route>
+          <Route path = '/shows' component={() => 
+          <ShowList addShowHandler = {addShowHandler} deleteShowHandler = {deleteShowHandler} 
+          getAllShowHandler = {getAllShowHandler}
+          getAllHallHandler = {getAllHallHandler}
+          getAllMovieHandler = {getAllMovieHandler}/>}></Route>
+          <Route exact path='/buy_ticket/:id' name="buy_ticket" component={() => <BuyTicket/>}></Route>
 
         </div>
       </div>

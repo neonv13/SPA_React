@@ -4,13 +4,13 @@ import { useSelector, useDispatch } from "react-redux";
 import Select from "react-select"
 import { Button } from 'react-bootstrap';
 
-const AddShowForm = () => {
+const AddShowForm = (prop) => {
 
     const dispath = useDispatch();
     const movies = useSelector(state => state.filmReducer);
     const halls = useSelector(state => state.hallReducer);
-    const [film, setFilm] = useState()
-    const [hall, setHall] = useState()
+    // const [film, setFilm] = useState()
+    // const [hall, setHall] = useState()
     const data = useSelector(state => state.showReducer);
     function addFullData(filmName, hallName, date, time) {
         const film = movies.filter(value => value.name === filmName)
@@ -23,7 +23,7 @@ const AddShowForm = () => {
             booked_seats[i] = false;
         }
 
-        dispath(action.addShow(filmAsObject, hallAsObject, date, time, 0, booked_seats));
+        prop.addShowHandler(filmAsObject, hallAsObject, date, time, booked_seats);
     }
     function getCurrentDate() {
         var myDate = new Date();
