@@ -10,6 +10,8 @@ import ShowList from "./view/ShowList"
 import BuyTicket from "./form/BuyTicket";
 import {useSelector, useDispatch} from "react-redux";
 import * as action from "./actions/actions.js";
+import ShowListToday from "./view/ShowListToday";
+import ShowOnGoing from "./view/ShowOnGoing";
 
 
 function App() {
@@ -55,6 +57,10 @@ function App() {
           <Route exact path="/">
             <Home />
           </Route>
+          <Route exact path="/today">
+            <ShowListToday /></Route>
+          <Route exact path="/ongoing">
+            <ShowOnGoing /></Route>
           <Route path = '/films' component={() => 
           <MovieList addMovieHandler= {addMovieHandler} deleteMovieHandler = {deleteMovieHandler} getAllMovieHandler = {getAllMovieHandler}/>}></Route>
           <Route path = '/halls' component={() => 

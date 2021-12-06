@@ -11,9 +11,19 @@ const Navigation = () => {
             <Navbar.Brand as={Link} to="/">Cinema Managment</Navbar.Brand>
                 <Nav className="me-auto">
                     <NavDropdown title="Panel użytkownika" id="collasible-nav-dropdown">
-                        <NavDropdown.Item href="">Action</NavDropdown.Item>
-                        <NavDropdown.Item href="#">Another action</NavDropdown.Item>
-                        <NavDropdown.Item href="#">Something</NavDropdown.Item>
+                        
+                    <Nav.Item>
+                        <Nav.Link as={Link} to="/today" title="ToDay">
+                            Seanse Dzisiaj
+                        </Nav.Link>
+                    </Nav.Item>
+
+                    <Nav.Item>
+                        <Nav.Link as={Link} to="/ongoing" title="OnGoing">
+                            Seanse Trwające
+                        </Nav.Link>
+                    </Nav.Item>
+
                     </NavDropdown>
                     <NavDropdown collapseOnSelect title="Panel administratora">
                     <Nav.Item>

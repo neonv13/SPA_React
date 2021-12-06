@@ -108,14 +108,14 @@
       },
       "date": "2021-12-23",
       "time": "19:30",
-      "tickets_sold": 1,
+      "tickets_sold": 2,
       "booked_seats": [
         false,
         true,
         false,
         false,
         false,
-        false,
+        true,
         false,
         false,
         false,
@@ -352,6 +352,48 @@
         false
       ],
       "id": 7
+    },
+    {
+      "film": {
+        "name": "Star Wars",
+        "duration": "159",
+        "img_src": "https://cdn.pixabay.com/photo/2021/11/11/20/49/sauerland-6787215_960_720.jpg"
+      },
+      "hall": {
+        "number": "43",
+        "capacity": "25"
+      },
+      "date": "2021-12-06",
+      "time": "23:07",
+      "tickets_sold": 0,
+      "booked_seats": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "id": 8
     }
   ]
 }
