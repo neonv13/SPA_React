@@ -24,7 +24,6 @@ function App() {
   function getAllMovieHandler(){
     dispath(action.showAllFilms());
   }
-
   function addHallHandler(number, capacity){
     dispath(action.addHall(number, capacity));
   }
@@ -34,7 +33,6 @@ function App() {
   function getAllHallHandler(){
     dispath(action.showAllHalls());
   }
-
   function addShowHandler(filmAsObject, hallAsObject, date, time, booked_seats){
     dispath(action.addShow(filmAsObject, hallAsObject, date, time, 0, booked_seats));
   }
@@ -43,6 +41,9 @@ function App() {
   }
   function getAllShowHandler(){
     dispath(action.showAllshows());
+  }
+  function editShowHandler(id,filmAsObject,hallAsObject,date,time){
+    dispath(action.showModified(id,filmAsObject,hallAsObject,date,time,0,0));
   }
 
 
@@ -62,7 +63,8 @@ function App() {
           <ShowList addShowHandler = {addShowHandler} deleteShowHandler = {deleteShowHandler} 
           getAllShowHandler = {getAllShowHandler}
           getAllHallHandler = {getAllHallHandler}
-          getAllMovieHandler = {getAllMovieHandler}/>}></Route>
+          getAllMovieHandler = {getAllMovieHandler}
+          editShowHandler = {editShowHandler}/>}></Route>
           <Route exact path='/buy_ticket/:id' name="buy_ticket" component={() => <BuyTicket/>}></Route>
 
         </div>

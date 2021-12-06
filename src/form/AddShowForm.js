@@ -3,10 +3,12 @@ import * as action from "../actions/actions.js";
 import { useSelector, useDispatch } from "react-redux";
 import Select from "react-select"
 import { Button } from 'react-bootstrap';
+import { propTypes } from "react-bootstrap/esm/Image";
+import PropTypes from "prop-types";
 
 const AddShowForm = (prop) => {
 
-    const dispath = useDispatch();
+    // const dispath = useDispatch();
     const movies = useSelector(state => state.filmReducer);
     const halls = useSelector(state => state.hallReducer);
     // const [film, setFilm] = useState()
@@ -22,8 +24,13 @@ const AddShowForm = (prop) => {
         for(let i = 0; i< hallAsObject.capacity;i++){
             booked_seats[i] = false;
         }
-
+        console.log(filmAsObject, hallAsObject, date, time, booked_seats);
         prop.addShowHandler(filmAsObject, hallAsObject, date, time, booked_seats);
+    }
+    addFullData.propTypes = {
+        filmName: PropTypes.string,
+        hallName: PropTypes.number,
+
     }
     function getCurrentDate() {
         var myDate = new Date();
