@@ -4,15 +4,15 @@ import {useSelector, useDispatch} from "react-redux";
 import {Table, Button, Modal} from 'react-bootstrap'
 import AddShowForm from "../form/AddShowForm.js";
 import EditShow from "../EditShow"
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 
 const ShowList = (prop) => {
 
-    const dispath = useDispatch();
+    // const dispath = useDispatch();
     const data = useSelector(state => state.showReducer);
-    const filmAsObject = { name: "dsadsa", duration: 13, img_src: "blalalal" }
-    const hallAsObject = { number: 32132, capacity: 130 }
+    // const filmAsObject = { name: "dsadsa", duration: 13, img_src: "blalalal" }
+    // const hallAsObject = { number: 32132, capacity: 130 }
     useEffect(() => {
         prop.getAllShowHandler();
         prop.getAllMovieHandler();
@@ -21,7 +21,7 @@ const ShowList = (prop) => {
 
     const [show, setShow] = useState(false);
     const [record,setRecord] = useState({})
-    const handleClose = () => setShow(false);
+    // const handleClose = () => setShow(false);
     function handleShow(id,film,hall,date,time,tickets_sold,booked_seats){
         setShow(false);
         setRecord({id:id,film:film,hall:hall,date:date,time:time,tickets_sold:tickets_sold,booked_seats:booked_seats})
@@ -71,7 +71,7 @@ const ShowList = (prop) => {
        {show === true && 
        <div>
            <h1>Edycja seansu</h1>
-           <EditShow record = {record}/>
+           <EditShow record = {record} editShowHandler = {prop.editShowHandler}/>
        </div>
         
        }

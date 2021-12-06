@@ -3,8 +3,10 @@ import * as action from "./actions/actions.js";
 import {useSelector, useDispatch} from "react-redux";
 import {Table, Button, Modal} from 'react-bootstrap'
 import AddShowForm from "./form/AddShowForm.js";
+import PropTypes from "prop-types";
+import { propTypes } from "react-bootstrap/esm/Image";
 
-const EditShow = (record) => {
+const EditShow = (prop) => {
     
     const dispath = useDispatch();
     const movies = useSelector(state => state.filmReducer);
@@ -17,8 +19,13 @@ const EditShow = (record) => {
         const hallAsObject = { number: hall[0].number, capacity: hall[0].capacity }
         let booked_seats = 0
 
-        dispath(action.showModified(id,filmAsObject,hallAsObject,date,time,0,0));
+        //dispath(action.showModified(id,filmAsObject,hallAsObject,date,time,0,0));
+        prop.editShowHandler(id,filmAsObject,hallAsObject,date,time);
     }
+    // editFullData.PropTypes = {
+    //     filmName: PropTypes.string,
+    //     hallname: PropTypes.number,
+    // }
     function getCurrentDate() {
         var myDate = new Date();
         var year = myDate.getFullYear();
@@ -35,26 +42,26 @@ const EditShow = (record) => {
     }
        return (
         <div>
-        <form name="editShowForm" onSubmit={() => editFullData(record.record.id, document.getElementById("editShowFilm").value, document.getElementById("editShowHall").value
+        <form name="editShowForm" onSubmit={() => editFullData(prop.record.id, document.getElementById("editShowFilm").value, document.getElementById("editShowHall").value
                 , document.getElementById("editShowDate").value, document.getElementById("editShowTime").value)}>
             <label>Nazwa filmu</label>
             <select id="editShowFilm">
-                <option selected disabled hidden defaultValue={record.record.film.name}>{record.record.film.name}</option>
+                <option selected disabled hidden defaultValue={prop.record.film.name}>{prop.record.film.name}</option>
                 {movies.map(value => {
                     return <option value={value.name} key={value.name}>{value.name}</option>
                 })}
             </select>
             <label>Sala</label>
             <select id="editShowHall">
-                <option selected disabled hidden defaultValue={record.record.hall.number}> {record.record.hall.number}</option>
+                <option selected disabled hidden defaultValue={prop.record.hall.number}> {prop.record.hall.number}</option>
                 {halls.map(value => {
                     return <option value={value.number} key={value.number}>{value.number}</option>
                 })}
             </select>
             <label>Data</label>
-            <input type="date" defaultValue={record.record.date} min={getCurrentDate()} id="editShowDate"></input>
+            <input type="date" defaultValue={prop.record.date} min={getCurrentDate()} id="editShowDate"></input>
             <label>Godzina</label>
-            <input type="time" defaultValue={record.record.time} id="editShowTime"></input>
+            <input type="time" defaultValue={prop.record.time} id="editShowTime"></input>
             <Button color="danger" type="submit">Edit</Button>
                 </form>
         </div>
