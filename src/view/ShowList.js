@@ -3,7 +3,7 @@ import * as action from "../actions/actions.js";
 import {useSelector, useDispatch} from "react-redux";
 import {Table, Button, Modal} from 'react-bootstrap'
 import AddShowForm from "../form/AddShowForm.js";
-import EditShow from "../EditShow"
+import EditShow from "../EditShow.js"
 // import { Link } from "react-router-dom";
 
 

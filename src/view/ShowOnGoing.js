@@ -47,11 +47,8 @@ const ShowOnGoing = () => {
         return date.getHours() + ":" + date.getMinutes();
     }
        
-    const showList = showListTmp.filter(value => value.time < getCurrentTime() && changeTime(value.time,value.film.duration) > getCurrentTime());
+    const showList = showListTmp.filter(value => value.date === getCurrentDate() && value.time < getCurrentTime() && changeTime(value.time,value.film.duration) > getCurrentTime());
 
-    showList.sort(function(a, b) {
-        return a.date - b.date;
-    })
 
     const cards = showList.map(value => {
         return (
@@ -60,7 +57,7 @@ const ShowOnGoing = () => {
                     <Card.Img variant="top" src={value.film.img_src} />
                     <Card.Body>
                         <Card.Title>{value.film.name}</Card.Title>
-                        {(value.time < getCurrentTime() && changeTime(value.time,value.film.duration) > getCurrentTime()) &&
+                        {(value.date === getCurrentDate() && value.time < getCurrentTime() && changeTime(value.time,value.film.duration) > getCurrentTime()) &&
                             <Card.Text style={{background:"red"}}>
                                 Trwa
                             </Card.Text>
@@ -95,7 +92,7 @@ const ShowOnGoing = () => {
 
     return (
         <div>
-            <h1 className="cards-title2">Dzisiejsze seanse</h1>
+            <h1 className="cards-title">Dzisiejsze seanse</h1>
             <Row xs={1} md={3} className="g-4">
                 {cards}
             </Row>

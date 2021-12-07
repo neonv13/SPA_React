@@ -72,6 +72,8 @@ const MovieListByDate = (dateMovie) => {
                         </div>
                         <div className="card-footer-element">
                             <Link to={`buy_ticket/${value.id}`} params={value.id}><Button size="sm">Kup bilet</Button></Link>
+                            {console.log(movieList.findIndex(movie => movie.name === value.film.name ))}
+                            {/* <Link to={`details/${movieList.find(movie => movie.name === value.film.name ).id}`} params={movieList.find(movie => movie.name === value.film.name).id}><Button size="sm">Szczegóły</Button></Link> */}
                         </div>
 
                     </div>

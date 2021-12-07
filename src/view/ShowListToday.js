@@ -40,18 +40,14 @@ const ShowListToday = () => {
         let hour = parseInt(arr[0]);
         let min = parseInt(arr[1]);
         let x = min + duration
-        date.setHours(hour);
-        date.setMinutes(min);
+        date.setHours(hour );
+        date.setMinutes(min );
         date.setMinutes(duration);
         
         return date.getHours() + ":" + date.getMinutes();
     }
        
     const showList = showListTmp.filter(show => show.date === getCurrentDate());
-
-    showList.sort(function(a, b) {
-        return a.date - b.date;
-    })
 
     const cards = showList.map(value => {
         return (
@@ -60,11 +56,13 @@ const ShowListToday = () => {
                     <Card.Img variant="top" src={value.film.img_src} />
                     <Card.Body>
                         <Card.Title>{value.film.name}</Card.Title>
-                        {(value.time < getCurrentTime() && changeTime(value.time,value.film.duration) > getCurrentTime()) &&
+
+                        {/* {console.log(getCurrentDate())}
+                        {(value.date === getCurrentDate() && value.time < getCurrentTime() && changeTime(value.time,value.film.duration) > getCurrentTime()) &&
                             <Card.Text style={{background:"red"}}>
                                 Trwa
                             </Card.Text>
-                        }
+                        } */}
                         <Card.Text>
                             Sala: {value.hall.number}<br></br>
                             Ilość miejsc: {value.hall.capacity - value.tickets_sold}
@@ -75,11 +73,11 @@ const ShowListToday = () => {
                             Data: {value.date}<br></br>
                             Godzina: {value.time}
                         </div>
-                        {(value.time > getCurrentTime() || changeTime(value.time,value.film.duration) > getCurrentTime()) &&
+                        {/* {(value.time > getCurrentTime() || changeTime(value.time,value.film.duration) > getCurrentTime()) &&
+                            } */}
                             <div className="card-footer-element">
                                 <Link to={`buy_ticket/${value.id}`} params={value.id}><Button size="sm">Kup bilet</Button></Link>
                             </div>
-                        }
 
                     </div>
                 </Card>

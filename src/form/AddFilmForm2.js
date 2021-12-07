@@ -5,9 +5,6 @@ import {useSelector} from "react-redux";
 import PropTypes from "prop-types";
 
 const AddFilmForm2 = (prop) => {
-
-    // const [nameLength,setName] = useState(0)
-    // const [duration,setDuration] = useState()
     
     function addFilm(name,duration,img_src){
         const nameToUpperCase = name.toString().charAt(0).toUpperCase() + name.slice(1);

@@ -13,22 +13,10 @@
       "id": 2
     },
     {
-      "name": "321",
-      "duration": "157",
+      "name": "TestFilmu",
+      "duration": "50",
       "img_src": "https://cdn.pixabay.com/photo/2021/11/11/20/49/sauerland-6787215_960_720.jpg",
-      "id": 3
-    },
-    {
-      "name": "Ewqe",
-      "duration": "153",
-      "img_src": "https://cdn.pixabay.com/photo/2021/11/11/20/49/sauerland-6787215_960_720.jpg",
-      "id": 4
-    },
-    {
-      "name": "Fdfd",
-      "duration": "150",
-      "img_src": "https://cdn.pixabay.com/photo/2021/11/11/20/49/sauerland-6787215_960_720.jpg",
-      "id": 5
+      "id": 6
     }
   ],
   "halls": [
@@ -43,59 +31,17 @@
       "id": 2
     },
     {
-      "number": "435",
-      "capacity": "30",
-      "id": 3
+      "number": "22",
+      "capacity": "50",
+      "id": 4
+    },
+    {
+      "number": "26",
+      "capacity": "60",
+      "id": 5
     }
   ],
   "shows": [
-    {
-      "film": {
-        "name": "Star Wars",
-        "duration": "159",
-        "img_src": "https://cdn.pixabay.com/photo/2021/11/11/20/49/sauerland-6787215_960_720.jpg"
-      },
-      "hall": {
-        "number": "435",
-        "capacity": "30"
-      },
-      "date": "2021-12-09",
-      "time": "20:30",
-      "tickets_sold": 3,
-      "booked_seats": [
-        false,
-        true,
-        false,
-        false,
-        true,
-        true,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false
-      ],
-      "id": 1
-    },
     {
       "film": {
         "name": "Avengers",
@@ -140,53 +86,6 @@
     },
     {
       "film": {
-        "name": "Ewqe",
-        "duration": "153",
-        "img_src": "https://cdn.pixabay.com/photo/2021/11/11/20/49/sauerland-6787215_960_720.jpg"
-      },
-      "hall": {
-        "number": "435",
-        "capacity": "30"
-      },
-      "date": "2021-12-09",
-      "time": "17:30",
-      "tickets_sold": 0,
-      "booked_seats": [
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false
-      ],
-      "id": 3
-    },
-    {
-      "film": {
         "name": "Star Wars",
         "duration": "159",
         "img_src": "https://cdn.pixabay.com/photo/2021/11/11/20/49/sauerland-6787215_960_720.jpg"
@@ -226,90 +125,6 @@
         false
       ],
       "id": 4
-    },
-    {
-      "film": {
-        "name": "321",
-        "duration": "157",
-        "img_src": "https://cdn.pixabay.com/photo/2021/11/11/20/49/sauerland-6787215_960_720.jpg"
-      },
-      "hall": {
-        "number": "43",
-        "capacity": "25"
-      },
-      "date": "2021-12-15",
-      "time": "14:19",
-      "tickets_sold": 0,
-      "booked_seats": [
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false
-      ],
-      "id": 5
-    },
-    {
-      "film": {
-        "name": "321",
-        "duration": "157",
-        "img_src": "https://cdn.pixabay.com/photo/2021/11/11/20/49/sauerland-6787215_960_720.jpg"
-      },
-      "hall": {
-        "number": "43",
-        "capacity": "25"
-      },
-      "date": "2021-12-06",
-      "time": "15:22",
-      "tickets_sold": 1,
-      "booked_seats": [
-        false,
-        false,
-        true,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false
-      ],
-      "id": 6
     },
     {
       "film": {
@@ -394,6 +209,265 @@
         false
       ],
       "id": 8
+    },
+    {
+      "film": {
+        "name": "Avengers",
+        "duration": "150",
+        "img_src": "https://cdn.pixabay.com/photo/2021/11/11/20/49/sauerland-6787215_960_720.jpg"
+      },
+      "hall": {
+        "number": "12",
+        "capacity": "50"
+      },
+      "date": "2021-12-07",
+      "time": "02:26",
+      "tickets_sold": 0,
+      "booked_seats": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "id": 11
+    },
+    {
+      "film": {
+        "name": "TestFilmu",
+        "duration": "50",
+        "img_src": "https://cdn.pixabay.com/photo/2021/11/11/20/49/sauerland-6787215_960_720.jpg"
+      },
+      "hall": {
+        "number": "26",
+        "capacity": "60"
+      },
+      "date": "2021-12-08",
+      "time": "12:00",
+      "tickets_sold": 0,
+      "booked_seats": 0,
+      "id": 12
+    },
+    {
+      "film": {
+        "name": "Star Wars",
+        "duration": "159",
+        "img_src": "https://cdn.pixabay.com/photo/2021/11/11/20/49/sauerland-6787215_960_720.jpg"
+      },
+      "hall": {
+        "number": "22",
+        "capacity": "50"
+      },
+      "date": "2021-12-07",
+      "time": "07:04",
+      "tickets_sold": 0,
+      "booked_seats": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "id": 13
+    },
+    {
+      "film": {
+        "name": "TestFilmu",
+        "duration": "50",
+        "img_src": "https://cdn.pixabay.com/photo/2021/11/11/20/49/sauerland-6787215_960_720.jpg"
+      },
+      "hall": {
+        "number": "22",
+        "capacity": "50"
+      },
+      "date": "2021-12-07",
+      "time": "12:04",
+      "tickets_sold": 0,
+      "booked_seats": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "id": 14
+    },
+    {
+      "film": {
+        "name": "Avengers",
+        "duration": "150",
+        "img_src": "https://cdn.pixabay.com/photo/2021/11/11/20/49/sauerland-6787215_960_720.jpg"
+      },
+      "hall": {
+        "number": "43",
+        "capacity": "25"
+      },
+      "date": "2021-12-07",
+      "time": "21:04",
+      "tickets_sold": 0,
+      "booked_seats": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "id": 15
     }
   ]
 }
